@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use MarcReichel\IGDBLaravel\Models\Game;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +18,22 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    //$games = Game::where('name', 'Fortnite')->get();
+
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        // 'data' => Http::withHeaders([
+        //     'Client-ID' => 'iaj70hx3m2igkd5yh41ewffsmi0wi6',
+        //     'Authorization' => 'Bearer hpjh7j75xx1y1zgt7nkpytdxlswjnm'
+        // ])
+        // ->withBody(
+        //     'fields *;', 'text/plain'
+        // )
+        // ->post('https://api.igdb.com/v4/games')
+        // ->json(),
     ]);
 });
 
