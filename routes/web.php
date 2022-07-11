@@ -25,15 +25,6 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        // 'data' => Http::withHeaders([
-        //     'Client-ID' => 'iaj70hx3m2igkd5yh41ewffsmi0wi6',
-        //     'Authorization' => 'Bearer hpjh7j75xx1y1zgt7nkpytdxlswjnm'
-        // ])
-        // ->withBody(
-        //     'fields *;', 'text/plain'
-        // )
-        // ->post('https://api.igdb.com/v4/games')
-        // ->json(),
     ]);
 });
 
