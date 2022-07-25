@@ -26,7 +26,16 @@
         },
         watch: {
             search: debounce(function(value) {
-                console.log('triggered');
+                axios.get('/search', {
+                    params: {
+                        q: value
+                    }
+                }, {
+                    preserveState: true,
+                    replace: true
+                }).then((response) => {
+                    console.log(response.data);
+                });
             }, 500)
         }
     }
