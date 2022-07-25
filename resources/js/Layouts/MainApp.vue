@@ -11,11 +11,6 @@ import Navbar from '@/Components/Navbar.vue'
 export default {
     components: {
         Navbar
-    },
-    data() {
-        return {
-            isDark: true,
-        }
     }
 }
 </script>
